@@ -4,7 +4,7 @@ if(COMMAND CMAKE_POLICY)
   cmake_policy(SET CMP0003 NEW)
 endif()
 
-
+project(ITKUtils)
 
 # Find ITK.
 find_package(ITK REQUIRED)
