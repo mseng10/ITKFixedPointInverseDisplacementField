@@ -137,7 +137,13 @@ void FixedPointInverseDeformationFieldImageFilter<TInputImage, TOutputImage>::Ge
 
 
 			if (vectorInterpolator->IsInsideBuffer(mappedPt)) {
-				outputIt.Set(vectorInterpolator->Evaluate(mappedPt));
+			    InterpolatorVectorType val = vectorInterpolator->Evaluate(mappedPt);
+				OutputVectorType outputVector ;
+				for( unsigned int j = 0 ; j < ImageDimension ; j++ )
+				{
+				   outputVector[j] = val[j];
+				}
+				outputIt.Set(outputVector);
 			}
 		}
 	}

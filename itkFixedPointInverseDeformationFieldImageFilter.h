@@ -96,8 +96,9 @@ public:
   typedef ImageRegionIterator<OutputImageType>     OutputIterator;
 
   typedef WarpVectorImageFilter<TOutputImage,TInputImage,TOutputImage> VectorWarperType;
-
-  typedef VectorLinearInterpolateImageFunction<TInputImage,double> FieldInterpolatorType;
+  typedef typename NumericTraits<typename TOutputImage::PixelType>::RealType InterpolatorVectorType;
+  typedef typename TOutputImage::PixelType OutputVectorType;
+  typedef VectorLinearInterpolateImageFunction<TInputImage, double> FieldInterpolatorType;
   typedef typename FieldInterpolatorType::Pointer                  FieldInterpolatorPointer;
   typedef typename FieldInterpolatorType::OutputType               FieldInterpolatorOutputType;
 
