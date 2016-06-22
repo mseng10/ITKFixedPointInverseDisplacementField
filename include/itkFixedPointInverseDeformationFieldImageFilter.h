@@ -1,19 +1,22 @@
 /*=========================================================================
-
- Program:   Insight Segmentation & Registration Toolkit
- Module:    $RCSfile: itkFixedPointInverseDeformationFieldImageFilter.h,v $
- Language:  C++
-
- Copyright: University of Basel, All rights reserved
-
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.  See the above copyright notices for more information.
-
- =========================================================================*/
-
-#ifndef __itkFixedPointInverseDeformationFieldImageFilter_h
-#define __itkFixedPointInverseDeformationFieldImageFilter_h
+ *
+ *  Copyright University of Basel, All rights reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0.txt
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *=========================================================================*/
+#ifndef itkFixedPointInverseDeformationFieldImageFilter_h
+#define itkFixedPointInverseDeformationFieldImageFilter_h
 
 
 #include "itkImageToImageFilter.h"
@@ -42,6 +45,9 @@ namespace itk
  * is applied.
  *
  * \author Marcel Lüthi, Computer Science Department, University of Basel
+ *
+ * \ingroup ImageToImageFilter
+ * \ingroup FixedPointInverseDeformationField
  */
 
 template < class TInputImage, class TOutputImage >
@@ -51,9 +57,9 @@ class ITK_EXPORT FixedPointInverseDeformationFieldImageFilter :
 public:
   /** Standard class typedefs. */
   typedef FixedPointInverseDeformationFieldImageFilter   Self;
-  typedef ImageToImageFilter<TInputImage,TOutputImage>  Superclass;
-  typedef SmartPointer<Self>                            Pointer;
-  typedef SmartPointer<const Self>                      ConstPointer;
+  typedef ImageToImageFilter<TInputImage,TOutputImage>   Superclass;
+  typedef SmartPointer<Self>                             Pointer;
+  typedef SmartPointer<const Self>                       ConstPointer;
 
   /** Method for creation through the object factory. */
   itkNewMacro(Self);
@@ -69,7 +75,7 @@ public:
   typedef typename InputImageType::PointType       InputImagePointType;
   typedef typename InputImageType::RegionType      InputImageRegionType;
   typedef typename InputImageType::SpacingType     InputImageSpacingType;
-  typedef typename InputImageType::IndexType      InputImageIndexType;
+  typedef typename InputImageType::IndexType       InputImageIndexType;
 
 
   typedef TOutputImage                             OutputImageType;
@@ -78,29 +84,27 @@ public:
   typedef typename OutputImageType::PointType      OutputImagePointType;
   typedef typename OutputImageType::IndexType      OutputImageIndexType;
   typedef typename OutputImagePixelType::ValueType OutputImageValueType;
-  typedef typename OutputImageType::SizeType 	    OutputImageSizeType;
-  typedef typename OutputImageType::SpacingType     OutputImageSpacingType;
-  typedef typename TOutputImage::PointType   		OutputImageOriginPointType;
-  typedef TimeProbe TimeType;
+  typedef typename OutputImageType::SizeType       OutputImageSizeType;
+  typedef typename OutputImageType::SpacingType    OutputImageSpacingType;
+  typedef typename TOutputImage::PointType         OutputImageOriginPointType;
+  typedef TimeProbe                                TimeType;
 
 
   /** Number of dimensions. */
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TOutputImage::ImageDimension);
 
-
-
-  typedef ImageRegionConstIterator<InputImageType> InputConstIterator;
-  typedef ImageRegionIterator<InputImageType>      InputIterator;
+  typedef ImageRegionConstIterator<InputImageType>  InputConstIterator;
+  typedef ImageRegionIterator<InputImageType>       InputIterator;
   typedef ImageRegionConstIterator<OutputImageType> OutputConstIterator;
-  typedef ImageRegionIterator<OutputImageType>     OutputIterator;
+  typedef ImageRegionIterator<OutputImageType>      OutputIterator;
 
-  typedef WarpVectorImageFilter<TOutputImage,TInputImage,TOutputImage> VectorWarperType;
+  typedef WarpVectorImageFilter<TOutputImage,TInputImage,TOutputImage>       VectorWarperType;
   typedef typename NumericTraits<typename TOutputImage::PixelType>::RealType InterpolatorVectorType;
-  typedef typename TOutputImage::PixelType OutputVectorType;
-  typedef VectorLinearInterpolateImageFunction<TInputImage, double> FieldInterpolatorType;
-  typedef typename FieldInterpolatorType::Pointer                  FieldInterpolatorPointer;
-  typedef typename FieldInterpolatorType::OutputType               FieldInterpolatorOutputType;
+  typedef typename TOutputImage::PixelType                                   OutputVectorType;
+  typedef VectorLinearInterpolateImageFunction<TInputImage, double>          FieldInterpolatorType;
+  typedef typename FieldInterpolatorType::Pointer                            FieldInterpolatorPointer;
+  typedef typename FieldInterpolatorType::OutputType                         FieldInterpolatorOutputType;
 
 
   itkSetMacro(NumberOfIterations, unsigned int);
@@ -123,18 +127,12 @@ public:
   itkSetMacro(OutputOrigin, OutputImageOriginPointType);
   virtual void SetOutputOrigin( const double* values);
 
-
-
 #ifdef ITK_USE_CONCEPT_CHECKING
   /** Begin concept checking */
   itkConceptMacro(OutputHasNumericTraitsCheck,
                   (Concept::HasNumericTraits<OutputImageValueType>));
   /** End concept checking */
 #endif
-
-
-
-
 
 protected:
   FixedPointInverseDeformationFieldImageFilter();
@@ -160,6 +158,6 @@ private:
 
 } // end namespace itk
 
-#include "itkFixedPointInverseDeformationFieldImageFilter.txx"
+#include "itkFixedPointInverseDeformationFieldImageFilter.hxx"
 
 #endif

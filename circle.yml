@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker pull insighttoolkit/fixedpointinversedeformationfield-test
+    - ~/ITKFixedPointInverseDeformationField/test/Docker/build.sh
+
+test:
+  override:
+    - mkdir ~/ITKFixedPointInverseDeformationField-build
+    - docker run -v ~/ITKFixedPointInverseDeformationField:/usr/src/FixedPointInverseDeformationField -v ~/FixedPointInverseDeformationField-build:/usr/src/FixedPointInverseDeformationField-build insighttoolkit/fixedpointinversedeformationfield-test /usr/src/FixedPointInverseDeformationField/test/Docker/test.sh
+
+
