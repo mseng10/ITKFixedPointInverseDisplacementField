@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 
-SET(kit FixedPointInverseDeformationField)
+set(kit FixedPointInverseDeformationField)
 project(${kit})
 
 if(NOT ITK_SOURCE_DIR)

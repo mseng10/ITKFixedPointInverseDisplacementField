@@ -8,7 +8,6 @@ if(BUILD_TESTING)
   set_target_properties(${kit}Lib PROPERTIES COMPILE_FLAGS "-Dmain=${kit}EntryPoint")
 endif()
 
-get_target_property(LINK_LIBRARIES_invertDeformationFieldLib ${kit}Lib LIBRARY_OUTPUT_DIRECTORY)
 
 add_executable(InvertDeformationField ${${kit}_SRC} )
 
