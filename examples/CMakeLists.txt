@@ -1,18 +1,17 @@
+cmake_minimum_required(VERSION 3.0)
+set(module InvertDeformationField)
+project(${module})
 
-set(${kit}_SRC
+find_package(ITK REQUIRED COMPONENTS FixedPointInverseDeformationField)
+include(${ITK_USE_FILE})
+
+set(${module}_SRC
     InvertDeformationField.cxx
 )
 
-if(BUILD_TESTING)
-  add_library(${kit}Lib ${ITK_LIBRARY_BUILD_TYPE} ${${kit}_SRC})
-  set_target_properties(${kit}Lib PROPERTIES COMPILE_FLAGS "-Dmain=${kit}EntryPoint")
-endif()
-
-
-add_executable(InvertDeformationField ${${kit}_SRC} )
-
-target_link_libraries(InvertDeformationField ${ITK_LIBRARIES})
+add_executable(${module} ${${module}_SRC} )
+target_link_libraries(${module} ${ITK_LIBRARIES})
 
 set(INSTALL_RUNTIME_DESTINATION bin CACHE STRING "Install destination")
 
-install(TARGETS InvertDeformationField DESTINATION ${INSTALL_RUNTIME_DESTINATION})
+install(TARGETS ${module} DESTINATION ${INSTALL_RUNTIME_DESTINATION})
