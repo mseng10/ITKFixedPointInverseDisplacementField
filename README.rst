@@ -21,8 +21,6 @@ The FixedPointInverseDeformationFieldImageFilter has been implemented and descri
     http://www.insight-journal.org/browse/publication/768
     October 2010. 
 
-author Marcel Lüthi, Computer Science Department, University of Basel
-
 Since ITK 4.10.0, this module is available in the ITK source tree as a Remote
 module.  To enable it, set::
 
