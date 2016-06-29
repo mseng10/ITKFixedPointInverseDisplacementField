@@ -1,6 +1,12 @@
 itk_module_test()
 
-set( ${kit}-TestDriver_LIBRARIES ${ITK_LIBRARIES} ${kit}Lib)
+# 'kit' is not defined if this project is built
+# as an ITK module from the ITK source directory.
+if(NOT DEFINED kit)
+  set(kit FixedPointInverseDeformationField)
+endif()
+
+set(${kit}-TestDriver_LIBRARIES ${ITK_LIBRARIES} ${kit}Lib)
 set(TestDriverAdditionalSource ${kit}EntryPoint.cxx)
 
 CreateTestDriver(${kit} "${${kit}-TestDriver_LIBRARIES}" "${TestDriverAdditionalSource}")
