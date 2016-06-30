@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
   vim \
   zlib1g-dev
 
-RUN mkdir -p /usr/src/FixedPointInverseDeformationField-build
+RUN mkdir -p /usr/src/FixedPointInverseDisplacementField-build
 WORKDIR /usr/src
 
 # v4.10rc02 (2016-05-18)

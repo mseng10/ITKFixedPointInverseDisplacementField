@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 
-project(FixedPointInverseDeformationField)
+project(FixedPointInverseDisplacementField)
 
 if(NOT ITK_SOURCE_DIR)
   find_package(ITK 4.9 REQUIRED)

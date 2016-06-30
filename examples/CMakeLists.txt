@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
-set(module InvertDeformationField)
+set(module InvertDisplacementField)
 project(${module})
 
-find_package(ITK REQUIRED COMPONENTS FixedPointInverseDeformationField)
+find_package(ITK REQUIRED COMPONENTS FixedPointInverseDisplacementField)
 include(${ITK_USE_FILE})
 
 set(${module}_SRC
-    InvertDeformationField.cxx
+    InvertDisplacementField.cxx
 )
 
 add_executable(${module} ${${module}_SRC} )

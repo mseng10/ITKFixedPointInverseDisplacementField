@@ -23,10 +23,10 @@
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-#include "itkFixedPointInverseDeformationFieldImageFilter.h"
+#include "itkFixedPointInverseDisplacementFieldImageFilter.h"
 
 
-int main(int argc, char **argv)
+int FixedPointInverseDisplacementFieldTest(int argc, char *argv[])
 {
   if( argc < 3 )
     {
@@ -36,14 +36,14 @@ int main(int argc, char **argv)
 
   const unsigned int Dimension = 3;
 
-  typedef itk::Vector< float, Dimension >    VectorPixelType;
-  typedef  itk::Image< VectorPixelType, Dimension > InputDFType;
-  typedef  itk::Image< VectorPixelType, Dimension > OutputDFType;
+  typedef itk::Vector< float, Dimension >          VectorPixelType;
+  typedef itk::Image< VectorPixelType, Dimension > InputDFType;
+  typedef itk::Image< VectorPixelType, Dimension > OutputDFType;
 
   typedef itk::ImageFileReader< InputDFType >      ReaderType;
   typedef itk::ImageFileWriter< OutputDFType >     WriterType;
 
-  typedef itk::FixedPointInverseDeformationFieldImageFilter<InputDFType, OutputDFType> FPInverseType;
+  typedef itk::FixedPointInverseDisplacementFieldImageFilter<InputDFType, OutputDFType> FPInverseType;
 
   // read the file
   ReaderType::Pointer reader = ReaderType::New();
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     return 1;
     }
 
-  // invert the deformationfield
+  // invert the Displacementfield
   InputDFType::Pointer inputDf = reader->GetOutput();
 
   FPInverseType::Pointer inverter = FPInverseType::New();
@@ -89,5 +89,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
-
