@@ -64,9 +64,8 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 
 //----------------------------------------------------------------------------
 template<class TInputImage, class TOutputImage>
-void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::GenerateData() {
-
-  const unsigned int ImageDimension = InputImageType::ImageDimension;
+void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::GenerateData()
+{
 
   InputImageConstPointer inputPtr = this->GetInput(0);
   OutputImagePointer outputPtr = this->GetOutput(0);
