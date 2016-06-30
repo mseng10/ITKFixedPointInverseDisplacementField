@@ -8,11 +8,11 @@ die() {
   exit 1;
 }
 
-cd /usr/src/FixedPointInverseDeformationField-build || die "Could not cd into the build directory"
+cd /usr/src/FixedPointInverseDisplacementField-build || die "Could not cd into the build directory"
 
 cmake \
   -G Ninja \
   -DITK_DIR:PATH=/usr/src/ITK-build \
   -DCMAKE_BUILD_TYPE:STRING=Release \
-    /usr/src/FixedPointInverseDeformationField || die "CMake configuration failed"
+    /usr/src/FixedPointInverseDisplacementField || die "CMake configuration failed"
 ctest -VV -D Experimental || die "ctest failed"
