@@ -2,4 +2,4 @@
 
 script_dir="`cd $(dirname $0); pwd`"
 
-docker build -t insighttoolkit/fixedpointinverseDisplacementfield-test $script_dir
+docker build -t insighttoolkit/fixedpointinversedisplacementfield-test $script_dir

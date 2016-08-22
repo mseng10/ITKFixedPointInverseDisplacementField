@@ -5,12 +5,12 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker pull insighttoolkit/fixedpointinverseDisplacementfield-test
+    - docker pull insighttoolkit/fixedpointinversedisplacementfield-test
     - ~/ITKFixedPointInverseDisplacementField/test/Docker/build.sh
 
 test:
   override:
     - mkdir ~/ITKFixedPointInverseDisplacementField-build
-    - docker run -v ~/ITKFixedPointInverseDisplacementField:/usr/src/FixedPointInverseDisplacementField -v ~/FixedPointInverseDisplacementField-build:/usr/src/FixedPointInverseDisplacementField-build insighttoolkit/fixedpointinverseDisplacementfield-test /usr/src/FixedPointInverseDisplacementField/test/Docker/test.sh
+    - docker run -v ~/ITKFixedPointInverseDisplacementField:/usr/src/FixedPointInverseDisplacementField -v ~/FixedPointInverseDisplacementField-build:/usr/src/FixedPointInverseDisplacementField-build insighttoolkit/fixedpointinversedisplacementfield-test /usr/src/FixedPointInverseDisplacementField/test/Docker/test.sh
 
 
