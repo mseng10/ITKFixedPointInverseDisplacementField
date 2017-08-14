@@ -101,10 +101,7 @@ void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::G
       outputPtr->GetRequestedRegion());
   OutputImagePixelType zero_pt;
   zero_pt.Fill(0);
-  for (outputIt.GoToBegin(); !outputIt.IsAtEnd(); ++outputIt)
-  {
-    outputIt.Set(zero_pt);
-  }
+  outputPtr->FillBuffer(zero_pt);
 
 
   // In the fixed point iteration, we will need to access non-grid points.
