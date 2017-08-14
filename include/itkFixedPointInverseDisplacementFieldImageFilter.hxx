@@ -71,16 +71,6 @@ void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::G
   OutputImagePointer outputPtr = this->GetOutput(0);
 
 
-  // some checks
-  if (inputPtr.IsNull())
-  {
-    itkExceptionMacro("\n Input is missing.");
-  }
-  if ( (!TInputImage::ImageDimension) == TOutputImage::ImageDimension)
-  {
-    itkExceptionMacro("\n Image Dimensions must be the same.");
-  }
-
   // The initial Displacement field is simply the negative input Displacement field.
   // Here we create this Displacement field.
   InputImagePointer negField = InputImageType::New();
