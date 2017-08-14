@@ -131,6 +131,9 @@ public:
   /** Begin concept checking */
   itkConceptMacro(OutputHasNumericTraitsCheck,
                   (Concept::HasNumericTraits<OutputImageValueType>));
+  itkConceptMacro( SameDimensionCheck,
+                   ( Concept::SameDimension< TInputImage::ImageDimension, TOutputImage::ImageDimension > ) );
+
   /** End concept checking */
 #endif
 
