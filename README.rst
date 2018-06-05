@@ -16,8 +16,8 @@ ITKFixedPointInverseDisplacementField
 |CircleCI|  |TravisCI|  |AppVeyor|
 =========== =========== ===========
 
-ITKFixedPointInverseDisplacementField takes a Displacement field as input and
-computes the Displacement field that is its inverse. If the input Displacement
+ITKFixedPointInverseDisplacementField takes a displacement field as input and
+computes the displacement field that is its inverse. If the input Displacement
 field was mapping coordinates from a space A into a space B, the output of
 this filter will map coordinates from the space B into the space A.
 
