@@ -24,7 +24,7 @@
 namespace itk {
 //----------------------------------------------------------------------------
 // Constructor
-template<class TInputImage, class TOutputImage>
+template<typename TInputImage, typename TOutputImage>
 FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::FixedPointInverseDisplacementFieldImageFilter() :
   m_NumberOfIterations(5) {
 
@@ -40,7 +40,7 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::FixedP
 /**
  * Set the output image spacing.
  */
-template <class TInputImage, class TOutputImage>
+template <typename TInputImage, typename TOutputImage>
 void
 FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 ::SetOutputSpacing(const double* spacing)
@@ -52,7 +52,7 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 /**
  * Set the output image origin.
  */
-template <class TInputImage, class TOutputImage>
+template <typename TInputImage, typename TOutputImage>
 void
 FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 ::SetOutputOrigin(const double* origin)
@@ -63,7 +63,7 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 
 
 //----------------------------------------------------------------------------
-template<class TInputImage, class TOutputImage>
+template<typename TInputImage, typename TOutputImage>
 void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::GenerateData()
 {
 
@@ -128,7 +128,7 @@ void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::G
 /**
  * Inform pipeline of required output region
  */
-template <class TInputImage, class TOutputImage>
+template <typename TInputImage, typename TOutputImage>
 void
 FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 ::GenerateOutputInformation()
@@ -157,7 +157,7 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage,TOutputImage>
 
 
 //----------------------------------------------------------------------------
-template<class TInputImage, class TOutputImage>
+template<typename TInputImage, typename TOutputImage>
 void
 FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>
 ::GenerateInputRequestedRegion()
@@ -180,7 +180,7 @@ FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>
 }
 
 //----------------------------------------------------------------------------
-template<class TInputImage, class TOutputImage>
+template<typename TInputImage, typename TOutputImage>
 void FixedPointInverseDisplacementFieldImageFilter<TInputImage, TOutputImage>::PrintSelf(
     std::ostream& os, Indent indent) const
 {
