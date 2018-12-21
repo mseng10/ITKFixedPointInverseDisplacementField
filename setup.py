@@ -19,8 +19,14 @@ setup(
     packages=['itk'],
     package_dir={'itk': 'itk'},
     download_url=r'https://github.com/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField',
-    description=r'Takes a displacement field as input and computes the displacement field that is its inverse with a simple fixed-point approach.',
-    long_description='ITK is an open-source, cross-platform library that provides developers with an extensive suite of software tools for image analysis. Developed through extreme programming methodologies, ITK employs leading-edge algorithms for registering and segmenting multidimensional scientific images.',
+    description=r'Takes a displacement field as input and computes the displacement field that is its inverse.',
+    long_description='itk-fixedpointinversedisplacementfield takes a '
+                     'displacement field as input and computes the '
+                     'displacement field that is its inverse with a simple '
+                     'fixed-point approach.\n'
+                     'Please refer to:\n'
+                     'M. Luethi, "Inverting deformation fields using a fixed point iteration scheme.", '
+                     'Insight Journal, July-December 2010, http://hdl.handle.net/10380/3222.',
     classifiers=[
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
@@ -41,8 +47,8 @@ setup(
         "Operating System :: MacOS"
         ],
     license='Apache',
-    keywords='ITK InsightToolkit',
-    url=r'https://itk.org/',
+    keywords='ITK InsightToolkit Spatial-Transforms',
+    url=r'https://github.com/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField',
     install_requires=[
         r'itk'
     ]
