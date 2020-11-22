@@ -28,9 +28,6 @@ module.  To enable it, set::
 
 in ITK's CMake build configuration.
 
-Installation
--------------
+Install Python packages with::
 
-```
-pip install itk-fixedpointinversedisplacementfield
-```
+  pip install itk-fixedpointinversedisplacementfield
