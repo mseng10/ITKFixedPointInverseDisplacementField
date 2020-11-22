@@ -2,21 +2,6 @@ ITKFixedPointInverseDisplacementField
 =================================
 .. image:: https://github.com/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField/workflows/Build,%20test,%20package/badge.svg
 
-.. |CircleCI| image:: https://circleci.com/gh/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField.svg?style=shield
-    :target: https://circleci.com/gh/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField
-
-.. |TravisCI| image:: https://travis-ci.org/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField.svg?branch=master
-    :target: https://travis-ci.org/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField
-
-.. |AppVeyor| image:: https://img.shields.io/appveyor/ci/itkrobot/itkfixedpointinversedisplacementfield.svg
-    :target: https://ci.appveyor.com/project/itkrobot/itkfixedpointinversedisplacementfield
-
-=========== =========== ===========
-   Linux      macOS       Windows
-=========== =========== ===========
-|CircleCI|  |TravisCI|  |AppVeyor|
-=========== =========== ===========
-
 ITKFixedPointInverseDisplacementField takes a displacement field as input and
 computes the displacement field that is its inverse. If the input Displacement
 field was mapping coordinates from a space A into a space B, the output of
@@ -42,3 +27,10 @@ module.  To enable it, set::
   Module_FixedPointInverseDisplacementField:BOOL=ON
 
 in ITK's CMake build configuration.
+
+Installation
+-------------
+
+```
+pip install itk-fixedpointinversedisplacementfield
+```
