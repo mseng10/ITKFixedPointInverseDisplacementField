@@ -50,6 +50,6 @@ setup(
     keywords='ITK InsightToolkit Spatial-Transforms',
     url=r'https://github.com/InsightSoftwareConsortium/ITKFixedPointInverseDisplacementField',
     install_requires=[
-        r'itk>=5.1.1'
+        r'itk>=5.2rc1'
     ]
     )
